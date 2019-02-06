@@ -46,11 +46,11 @@ mongoose.connect("mongodb://localhost/mongoHeadlines", { useNewUrlParser: true }
 // A GET route for scraping the Complex website
 app.get("/scrape", function (req, res) {
     // grab the body of the html with axios
-    axios.get("https://www.complex.com").then(function (response) {
+    axios.get("http://www.mtv.com/news/").then(function (response) {
         // load that into cheerio and save it to $ for a shorthand selector
         var $ = cheerio.load(response.data);
 
-        $("gtm-article h2").each(function (i, element) {
+        $("article h1").each(function (i, element) {
             var result = {};
 
             result.title = $(this)
