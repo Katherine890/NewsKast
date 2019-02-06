@@ -42,6 +42,14 @@ app.use(express.static("public"));
 mongoose.connect("mongodb://localhost/mongoHeadlines", { useNewUrlParser: true });
 
 // Routes
+app.get("/", function(req, res) {
+    res.sendFile(path.join(__dirname, "index.html"));
+  });
+  
+app.get("/saved", function(req, res) {
+    res.sendFile(path.join(__dirname, "public/savedArticles.html"));
+  });
+  
 
 // A GET route for scraping the Complex website
 app.get("/scrape", function (req, res) {
@@ -59,6 +67,12 @@ app.get("/scrape", function (req, res) {
             result.link = $(this)
             .children("a")
             .attr("href");
+
+            $("article p").each(function (i, element) {
+                
+                result.summary = $(this)
+                .text();
+            })
 
             db.Article.create(result)
               .then(function(dbArticle) {
