@@ -1,11 +1,26 @@
 // Grab the articles as a json
-$.getJSON("/articles", function (data) {
-  // For each one
-  for (var i = 0; i < data.length; i++) {
-    // Display the apropos information on the page
-    $("#articles").append("<p data-id='" + data[i]._id + "'>" + data[i].title + "<br />" + data[i].link + "<br />" + data[i].summary + "</p>");
-  }
+// $.getJSON("/articles", function (data) {
+//   // For each one
+//   for (var i = 0; i < data.length; i++) {
+//     // Display the apropos information on the page
+//     $("#articles").append("<p data-id='" + data[i]._id + "'>" + data[i].title + "<br />" + data[i].link + "<br />" + data[i].summary + "</p>");
+//   }
+// });
+
+
+$("#scrape").on("click", function (event) {
+  //location.href = "index";
+  // Grab the articles as a json
+  $.getJSON("/articles", function (data) {
+    // For each one
+    for (var i = 0; i < data.length; i++) {
+      // Display the apropos information on the page
+      $("#articles").append(`<a target="_blank" href=${data[i].link}><div class="article-div"><p>${data[i].title}</p><a href=${data[i].link}>Link to Story</a><p>${data[i].summary}</p></div></a>`)
+      //$("#articles").append("<p data-id='" + data[i]._id + "'>" + data[i].title + "<br />" + data[i].link + "<br />" + data[i].summary + "</p>");
+    }
+  });
 });
+
 
 // Whenever someone clicks a p tag
 $(document).on("click", "p", function () {
