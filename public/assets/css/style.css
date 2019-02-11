@@ -1,5 +1,6 @@
 body {
-   background: url("../../../public/assets/img/binding_dark/binding_dark_@2X.png");
+  /* background: url("../../../public/assets/img/binding_dark/binding_dark_@2X.png");*/
+  background-color: gray;
 }
 
 h1 {
@@ -42,9 +43,10 @@ a:hover {
     background-color: black;
 }
 
-#saveButton {
+#saveButton, #articleNotes {
     background-color: #343a40;
     color: white;
+    margin: 5px;
 }
 
 /* Note Content*/

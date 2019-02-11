@@ -25,7 +25,7 @@ module.exports = function (app) {
                     .children("a")
                     .text()
                     .trim()
-                 result.link = $(this)
+                result.link = $(this)
                      .children("a")
                      .attr("href");
                 result.summary = $(this)
