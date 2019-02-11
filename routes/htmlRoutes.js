@@ -32,12 +32,6 @@ module.exports = function (app) {
                     .find(".subhead")
                     .text()
                     .trim()
-                // $("article p").each(function (i, element) {
-
-                //     result.summary = $(this)
-                //         .text();
-                //         console.log("result 1", result.summary);
-                // })
                 console.log(result);
                 db.Article.create(result)
                     .then(function (dbArticle) {
@@ -47,32 +41,6 @@ module.exports = function (app) {
                         console.log(err);
                     });
             });
-
-            // $("article h1").each(function (i, element) {
-            //     var result = {};
-
-            //     result.title = $(this)
-            //         .children("a")
-            //         .text();
-            //     result.link = $(this)
-            //         .children("a")
-            //         .attr("href");
-
-            //     $("article p").each(function (i, element) {
-
-            //         result.summary = $(this)
-            //             .text();
-            //             console.log("result 1", result.summary);
-            //     })
-            //     console.log(result);
-            //     db.Article.create(result)
-            //         .then(function (dbArticle) {
-            //             console.log(dbArticle);
-            //         })
-            //         .catch(function (err) {
-            //             console.log(err);
-            //         });
-            // });
 
             res.send("Scrape Complete");
         });

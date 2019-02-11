@@ -15,12 +15,12 @@ $("#scrape").on("click", function (event) {
     // For each one
     for (var i = 0; i < data.length; i++) {
       // Display the apropos information on the page
-      $("#articles").append(`<a target="_blank" href=${data[i].link}><div class="article-div"><p>${data[i].title}</p><a href=${data[i].link}>Link to Story</a><p>${data[i].summary}</p></div></a>`)
-      //$("#articles").append("<p data-id='" + data[i]._id + "'>" + data[i].title + "<br />" + data[i].link + "<br />" + data[i].summary + "</p>");
+       //$("#articles").append(`<div data-class="article-div"><a target="_blank" href=${data[i].link}><p>${data[i].title}</p></a><p>${data[i].summary}</p></div>`);
+       // $("#articles").append("<p data-id='" + data[i]._id + "'>" + data[i].title + "<br />" + data[i].link + "<br />" + data[i].summary + "</p>");
+     $("#articles").append("<div class=article-div>" + "<a target='blank' href='" + data[i].link + "'>" + "<p>" + data[i].title + "</p>" + "</a>" + "<p>" + data[i].summary + "</p>" + "</div>");
     }
   });
 });
-
 
 // Whenever someone clicks a p tag
 $(document).on("click", "p", function () {
