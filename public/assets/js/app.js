@@ -18,7 +18,7 @@ $("#scrape").on("click", function (event) {
       //$("#articles").append(`<div data-class="article-div"><a target="_blank" href=${data[i].link}><p>${data[i].title}</p></a><p>${data[i].summary}</p></div>`);
        //$("#articles").append("<p data-id='" + data[i]._id + "'>" + data[i].title + "<br />" + data[i].link + "<br />" + data[i].summary + "</p>");
       //$("#articles").append("<div class=article-div>" + "<a target='blank' href='" + data[i].link + "'>" + "<p>" + data[i].title + "</p>" + "</a>" + "<p>" + data[i].summary + "</p>" + "</div>");
-       $("#articles").append( "<div class=card>" + "<div class=card-header>" + "<a target='blank' href='" + data[i].link + "'>" + 
+       $("#articles").append( "<div data-id='" + data[i]._id + "' class=card>" + "<div class=card-header>" + "<a target='blank' href='" + data[i].link + "'>" + 
        "<h3>" + data[i].title + "</h3>" + "</a>" + "</div>" + "<div class=card-body>" + "<blockquote class=blockquote mb-0>" + 
        "<p>" + data[i].summary + "</p>" + "</blockquote>" + "<button id=saveButton  data-target=#savedArticles class=btn btn-primary>Save Article</button>" + 
        "<button data-id='" + data[i]._id + "' class=btn btn-primary>" + "Article Notes" + "</button>" + "</div>" + "</div>");
