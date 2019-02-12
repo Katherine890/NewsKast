@@ -10,6 +10,8 @@ var app = express();
 // Express Router
 var router = express.Router();
 
+require("./config/routes")(router);
+
 var logger = require("morgan");
 var mongoose = require("mongoose");
 
@@ -44,9 +46,18 @@ app.use(bodyParser.urlencoded({
 app.use(router);
 
 // Connect to the Mongo DB
-var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines";
+var db = process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines";
+mongoose.connect(db, function(error) {
+    if(error) {
+        console.log(error);
+    }
+    else {
+        console.log("mongoose connection is successful");
+    }
+});
+//var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines";
 
-mongoose.connect(MONGODB_URI, {useNewUrlParser: true});
+//mongoose.connect(MONGODB_URI, {useNewUrlParser: true});
 
 //mongoose.connect("mongodb://localhost/mongoHeadlines", { useNewUrlParser: true });
 
