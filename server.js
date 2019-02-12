@@ -15,14 +15,6 @@ require("./config/routes")(router);
 var logger = require("morgan");
 var mongoose = require("mongoose");
 
-
-//use axios to make http requests
-//var axios = require("axios");
-//var cheerio = require("cheerio");
-
-// Require all models
-//var db = require("./models");
-
 // Configure middleware
 
 // Use morgan logger for logging requests
