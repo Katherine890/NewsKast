@@ -10,13 +10,13 @@
                     <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/savedArticles">Saved Articles</a>
+                    <a id="saveButton" class="nav-link" href="/savedArticles">Saved Articles</a>
                 </li>
                 <li class="nav-item">
                     <a id="scrape" class="btn btn-light btn-sm">Scrape New Articles</a>
                 </li>
                 <li class="nav-item">
-                    <button type="button" class="btn btn-light btn-sm">Clear Articles</button>
+                    <a type="button" id="clearButton" class="btn btn-light btn-sm">Clear Articles</a>
                 </li>
             </ul>
         </div>
@@ -25,21 +25,13 @@
         <h1>Entertainment and Media</h1>
     </div>
 
-    <div id="wrapper">
+    <div class="wrapper">
         <div id="articles"></div>
-        {{!-- <div id="notes"></div> --}}
     </div>
 
-    {{!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> --}}
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    {{!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4/4/0/bootbox.min.js"></script> --}}
     <script src="assets/js/app.js"></script>
-    {{!--
-    <script>
-        $("#scrape").on("click", function (event) {
-            location.href = "index";
-        })
-    </script> --}}
     
