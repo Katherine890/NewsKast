@@ -43,7 +43,7 @@ a:hover {
     background-color: black;
 }
 
-#saveButton, #articleNotes {
+#saveArticle, #articleNotes {
     background-color: #343a40;
     color: white;
     margin: 5px;

@@ -79,4 +79,20 @@ module.exports = function (app) {
                 res.json(err);
             });
     });
+
+    app.post("/articles/saved/:id", function (req, res) {
+        var articleID = req.params.id
+        var saved = req.body.saved === "true"
+        console.log(articleID, saved);
+        // db.Article.findOneAndUpdate({ _id: req.params.id }, {saved})
+         db.Article.findOneAndUpdate({ _id: req.params.id }, {$set: {saved: saved}}, {multi:false})
+        .then(function (dbArticle) {
+            res.json(dbArticle);
+        })
+        .catch(function (err) {
+            res.json(err);
+        });
+    })
+   
+
 }
