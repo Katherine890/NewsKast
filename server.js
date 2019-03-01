@@ -47,11 +47,6 @@ mongoose.connect(db, function(error) {
         console.log("mongoose connection is successful");
     }
 });
-//var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines";
-
-//mongoose.connect(MONGODB_URI, {useNewUrlParser: true});
-
-//mongoose.connect("mongodb://localhost/mongoHeadlines", { useNewUrlParser: true });
 
 //Routes
 var routes = require("./routes/htmlRoutes")(app);
